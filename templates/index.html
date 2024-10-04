@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Sentiment Analysis</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Review Sentiment Analysis</h1>
+        <!-- Sentiment form -->
+        <form method="POST">
+            <textarea name="review" rows="5" cols="50" placeholder="Enter your movie review here..."></textarea><br><br>
+            <input type="submit" value="Analyze Sentiment">
+        </form>
+
+        <!-- Display the result -->
+        {% if result %}
+        <div class="result-box">
+            <p>Sentiment: <strong>{{ result }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
